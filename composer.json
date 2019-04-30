@@ -1,0 +1,44 @@
+{
+    "name": "tyraelll/laravelmailjet",
+    "description": ":description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Omer ATAGUN",
+            "email": "omratagn@gmail.com",
+            "homepage": "https://omeratagun.com"
+        }
+    ],
+    "homepage": "https://github.com/tyraelll/laravelmailjet",
+    "keywords": ["Laravel", "LaravelMailJet", "Mailjetphp", "php"],
+    "require": {
+        "illuminate/support": "~5",
+        "mailjet/mailjet-apiv3-php": "^1.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "tyraelll\\laravelmailjet\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tyraelll\\laravelmailjet\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "tyraelll\\laravelmailjet\\laravelmailjetServiceProvider"
+            ],
+            "aliases": {
+                "laravelmailjet": "tyraelll\\laravelmailjet\\Facades\\laravelmailjet"
+            }
+        }
+    }
+}
