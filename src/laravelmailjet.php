@@ -25,14 +25,14 @@ class laravelmailjet
     {
        // check if config file published and parameters filled //
         if(!empty(SetupConfig::checkConfig())){
-            return SetupConfig::checkConfig();
+            $message = SetupConfig::checkConfig()['Message'];
+            throw new Warning($message);
         }
         // all ok, set //
-        $this->api_key = Config::get('laravelmailjet')['MAILJETKEY'];
+        $this->api_key = Config::get('laravelmailjet')['MAILJET_KEY'];
         $this->secret_key = Config::get('laravelmailjet')['MAILJET_SECRET'];
         $this->from = Config::get('laravelmailjet')['ADMIN_MAIL'];
         $this->app_name = Config::get('laravelmailjet')['APP_NAME'];
-
     }
 
     /**

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'MAILJETKEY' => env("MAILJET_KEY"),
-    'MAILJETSECRET' => env("MAILJET_SECRET"),
-    'ADMINMAIL' => env('ADMIN_MAIL'),
+    'MAILJET_KEY' => env("MAILJET_KEY"),
+    'MAILJET_SECRET' => env("MAILJET_SECRET"),
+    'ADMIN_MAIL' => env('ADMIN_MAIL'),
     'APP_NAME' => env('APP_NAME'),
 ];

@@ -20,7 +20,7 @@ trait SetupConfig
 
         }
 
-        if(empty(Config::get('laravelmailjet')['MAILJETKEY'])){
+        if(empty(Config::get('laravelmailjet')['MAILJET_KEY'])){
 
             return ['Message' => 'Please provide mailjetkey in your config file', 'Status' => false];
 
