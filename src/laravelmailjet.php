@@ -23,43 +23,60 @@ class laravelmailjet
      */
     public function __construct()
     {
-
-        try {
-            $this->api_key = Config::get('laravelmailjet')['MAILJETKEY'];
-            $this->secret_key = Config::get('laravelmailjet')['MAILJET_SECRET'];
-            $this->from = Config::get('laravelmailjet')['ADMIN_MAIL'];
-            $this->app_name = env('APP_NAME');
+       // check if config file published and parameters filled //
+        if(!empty(SetupConfig::checkConfig())){
+            return SetupConfig::checkConfig();
         }
-        catch (ConfigurationException $e){
-            Log::info('Config has to be filled');
-        }
-
+        // all ok, set //
+        $this->api_key = Config::get('laravelmailjet')['MAILJETKEY'];
+        $this->secret_key = Config::get('laravelmailjet')['MAILJET_SECRET'];
+        $this->from = Config::get('laravelmailjet')['ADMIN_MAIL'];
+        $this->app_name = Config::get('laravelmailjet')['APP_NAME'];
 
     }
 
+    /**
+     * @param string $view
+     */
     public function view(string $view) : void {
 
         $this->view = $view;
 
     }
 
-    public function withData(Object_ $data) : void{
 
-        $this->view = view('emails.'.$this->view)->with(compact('data'))->render();
+    /**
+     * @param string $view
+     * @param $data
+     * @throws \Throwable
+     */
+    public function viewWithData(string $view, $data) : void{
+        // send data as an object //
+        $this->view = view($view)->with(compact('data'))->render();
+
     }
 
+    /**
+     * @param string $to
+     */
     public function to(string $to) : void{
 
         $this->to = $to;
 
     }
 
+    /**
+     * @param string $name
+     */
     public function name(string $name) : void{
 
         $this->user_name = $name;
 
     }
 
+    /**
+     * @param string $subject
+     */
     public function subject(string $subject) : void{
 
         $this->subject = $subject;
