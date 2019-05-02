@@ -35,22 +35,23 @@ class laravelmailjet
         $this->app_name = Config::get('laravelmailjet')['APP_NAME'];
     }
 
+
     /**
      * @param string $view
+     * @throws \Throwable
      */
-    public function view(string $view) : void {
+    public function view(string $view) {
 
-        $this->view = $view;
+        $this->view = view($view)->render();
 
     }
-
 
     /**
      * @param string $view
      * @param $data
      * @throws \Throwable
      */
-    public function viewWithData(string $view, $data) : void{
+    public function viewWithData(string $view, $data){
         // send data as an object //
         $this->view = view($view)->with(compact('data'))->render();
 
@@ -85,6 +86,7 @@ class laravelmailjet
 
     public function send(){
 
+
         try {
             $mj = new \Mailjet\Client($this->api_key, $this->secret_key,
                 true, ['version' => 'v3.1']);
@@ -109,11 +111,12 @@ class laravelmailjet
 
             $response = $mj->post(Resources::$Email, ['body' => $body]);
             if (!$response->success()) {
+                Log::warning('Mailing service has some issue... Maybe wrong config ?  Exception : ' . print_r($response->getData(), true));
                 return $response->getData();
             }
         }
         catch (\Exception $e){
-            Log::channel('infolog')->alert('Mailing service has some issue... Maybe wrong config ?  Exception : ' . $e->getCode(). ' | '. $e->getMessage());
+            Log::warning('Mailing service has some issue... Exception : ' . $e->getCode(). ' | '. $e->getMessage());
         }
 
     }
