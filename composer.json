@@ -13,7 +13,7 @@
     "homepage": "https://github.com/tyraelll/laravelmailjet",
     "keywords": ["Laravel", "LaravelMailJet", "Mailjetphp", "php"],
     "require": {
-        "php": ">=7.1",
+        "php": "^7.1.3",
         "illuminate/support": "~5",
         "mailjet/mailjet-apiv3-php": "^1.4"
     },
