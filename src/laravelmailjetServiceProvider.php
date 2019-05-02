@@ -13,12 +13,7 @@ class laravelmailjetServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'tyraelll');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'tyraelll');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
-        // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
             $this->bootForConsole();
         }
@@ -61,22 +56,5 @@ class laravelmailjetServiceProvider extends ServiceProvider
             __DIR__.'/../config/laravelmailjet.php' => config_path('laravelmailjet.php'),
         ], 'laravelmailjet.config');
 
-        // Publishing the views.
-        /*$this->publishes([
-            __DIR__.'/../resources/views' => base_path('resources/views/vendor/tyraelll'),
-        ], 'laravelmailjet.views');*/
-
-        // Publishing assets.
-        /*$this->publishes([
-            __DIR__.'/../resources/assets' => public_path('vendor/tyraelll'),
-        ], 'laravelmailjet.views');*/
-
-        // Publishing the translation files.
-        /*$this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/tyraelll'),
-        ], 'laravelmailjet.views');*/
-
-        // Registering package commands.
-        // $this->commands([]);
     }
 }
