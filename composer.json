@@ -9,6 +9,7 @@
             "homepage": "https://omeratagun.com"
         }
     ],
+    "minimum-stability": "dev",
     "homepage": "https://github.com/tyraelll/laravelmailjet",
     "keywords": ["Laravel", "LaravelMailJet", "Mailjetphp", "php"],
     "require": {
