@@ -6,8 +6,9 @@ Contributions are accepted via Pull Requests on [Github](https://github.com/tyra
 
 # Things you could do
 If you want to contribute but do not know where to start, this list provides some starting points.
+- Write tests
 - Add SMS method.
-- Add Queue functionality within laravel. 
+- Add Queue within laravel. 
 - Extend class with better logging. 
 ## Pull Requests
 

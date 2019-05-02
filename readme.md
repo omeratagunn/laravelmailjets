@@ -61,7 +61,7 @@ $t->send();
 Please see the [changelog](changelog.md) for more information on what has changed recently.
 
 ## Testing
-
+Not there yet.
 ``` bash
 $ composer test
 ```
@@ -85,12 +85,8 @@ license. Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/tyraelll/laravelmailjet.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/tyraelll/laravelmailjet.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/tyraelll/laravelmailjet/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
 
 [link-packagist]: https://packagist.org/packages/tyraelll/laravelmailjet
 [link-downloads]: https://packagist.org/packages/tyraelll/laravelmailjet
-[link-travis]: https://travis-ci.org/tyraelll/laravelmailjet
-[link-styleci]: https://styleci.io/repos/12345678
 [link-author]: https://github.com/tyraelll
 [link-contributors]: ../../contributors

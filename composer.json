@@ -1,6 +1,6 @@
 {
     "name": "tyraelll/laravelmailjet",
-    "description": ":description",
+    "description": "Easy Mailjet implementation into Laravel Framework",
     "license": "MIT",
     "authors": [
         {
